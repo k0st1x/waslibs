@@ -12,7 +12,7 @@ namespace AppStudio.DataProviders.Facebook
 {
     public class FacebookDataProvider : DataProviderBase<FacebookDataConfig, FacebookSchema>
     {
-        private const string BaseUrl = @"https://graph.facebook.com/v2.5";
+        private const string BaseUrl = @"https://graph.facebook.com/v3.2";
         private FacebookOAuthTokens _tokens;
 
         public override bool HasMoreItems
@@ -46,7 +46,7 @@ namespace AppStudio.DataProviders.Facebook
             };
 
             return await GetDataFromProvider(parser, settings);
-        } 
+        }
 
         protected override IParser<FacebookSchema> GetDefaultParserInternal(FacebookDataConfig config)
         {
